@@ -20,6 +20,13 @@ public class UserController {
         this.userSrv = userSrv;
     }
 
+    /**
+     * POST method used to insert given user in database.
+     * Url: .../user/create
+     *
+     * @param user intended to be persisted in database.
+     * @return the user actually persisted.
+     */
     @PostMapping(value = "/create",
     produces = "application/json",
     consumes = "application/json")
@@ -30,11 +37,17 @@ public class UserController {
         return result;
     }
 
+    /**
+     * Searches for user whose username is the id provided, and returns it.
+     *
+     * @param id string represeting username.
+     * @return user represented by given id.
+     */
     @GetMapping(value = "/{id}",
     produces = "application/json")
     public ResponseEntity<User> getUserById(@PathVariable String id) {
         User user = userSrv.getById(id);
         log.info("Retrieved user: {}", user.getUser());
-        return new ResponseEntity<User>(user, HttpStatus.OK);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
