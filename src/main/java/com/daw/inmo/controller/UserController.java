@@ -28,8 +28,8 @@ public class UserController {
      * @return the user actually persisted.
      */
     @PostMapping(value = "/create",
-    produces = "application/json",
-    consumes = "application/json")
+            produces = "application/json",
+            consumes = "application/json")
     public ResponseEntity<User> createUser(@RequestBody User user) {
         User savedUser = userSrv.create(user);
         ResponseEntity<User> result = new ResponseEntity<>(savedUser, HttpStatus.OK);
@@ -44,7 +44,7 @@ public class UserController {
      * @return user represented by given id.
      */
     @GetMapping(value = "/{id}",
-    produces = "application/json")
+            produces = "application/json")
     public ResponseEntity<User> getUserById(@PathVariable String id) {
         User user = userSrv.getById(id);
         log.info("Retrieved user: {}", user.getUser());

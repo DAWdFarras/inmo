@@ -44,7 +44,7 @@ public class UserSrv implements BasicService<User> {
     public boolean update(User target) {
         String id = target.getUser();
         boolean result = true;
-        if(existsById(id)) {
+        if (existsById(id)) {
             result = removeById(id);
         }
         return result;

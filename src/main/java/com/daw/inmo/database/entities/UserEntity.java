@@ -5,9 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
-import java.time.LocalDateTime;
-import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Data
 @Entity
@@ -15,7 +15,6 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 public class UserEntity implements BaseEntity<User> {
-
     @Id
     private String user;
     private String password;
