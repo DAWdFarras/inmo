@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @Entity
@@ -18,9 +19,6 @@ public class UserEntity implements BaseEntity<User> {
     @Id
     private String user;
     private String password;
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "creation_date")
-    private LocalDateTime creationDate;
 
     @Override
     public User toModel() {

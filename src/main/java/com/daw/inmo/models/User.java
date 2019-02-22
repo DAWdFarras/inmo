@@ -5,7 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -20,7 +22,6 @@ public class User implements BaseModel<UserEntity> {
         UserEntity userEntity = new UserEntity();
         userEntity.setUser(this.user);
         userEntity.setPassword(this.password);
-        userEntity.setCreationDate(LocalDateTime.now());
         return userEntity;
     }
 }

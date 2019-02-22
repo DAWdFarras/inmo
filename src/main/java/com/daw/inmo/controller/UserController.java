@@ -32,7 +32,7 @@ public class UserController {
 
     @GetMapping(value = "/{id}",
     produces = "application/json")
-    public ResponseEntity<User> getUserById(@RequestAttribute String id) {
+    public ResponseEntity<User> getUserById(@PathVariable String id) {
         User user = userSrv.getById(id);
         log.info("Retrieved user: {}", user.getUser());
         return new ResponseEntity<User>(user, HttpStatus.OK);
