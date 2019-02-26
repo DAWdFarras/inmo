@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UserSrv implements BasicService<User> {
+public class UserSrv implements BasicService<User, String> {
     private UserRepository userRepository;
 
     @Autowired
